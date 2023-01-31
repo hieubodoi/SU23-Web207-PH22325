@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body ng-app="angularjs-logic2">
+    <h1>Họ Tên: Nguyễn Vũ Minh Hiếu</h1>
+    <h1>MSV: PH22325</h1>
+    <a class="btn btn-primary" href="baitap2.html" role="button">Thêm</a>
+    <div ng-controller="loopConntroller">
+        <!-- -->
+        <ul>
+            <table class="table table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mô Tả</th>
+                        <th scope="col">Avatar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="motNguoiTao in danhSachNT ">
+                        <td scope="row">1</td>
+                        <td>{{motNguoiTao.ID}}</td>
+                        <td>{{motNguoiTao.NAME}}</td>
+                        <td>{{motNguoiTao.EMAIL}}</td>
+                        <td>
+                            <img src="{{motNguoiTao.AVATAR}}" alt="{{motNguoiTao.NAME}}" width="50" height="50"; />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ul>
+        
+    </div>
+<!--  -->
+    <script src="./libs/angular.min.js"></script>
+    <!--  -->
+    <script>
+        var app = angular.module("angularjs-logic2", []);
+        //loopController
+        app.controller("loopConntroller", function ($scope) {
+            $scope.danhSachNT = [
+                {ID: 999, NAME: "Nguyễn Vũ Minh Hiếu",EMAIL: "hieuvuive135798@gmail.com", AVATAR: 'https://khoinguonsangtao.vn/wp-content/uploads/2022/07/avatar-cute-2.jpg'},
+            ];
+        });
+    </script>
+    
+</body>
+
+</html>
